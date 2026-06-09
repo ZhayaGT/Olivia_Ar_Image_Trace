@@ -26,7 +26,7 @@ MonoBehaviour:
     m_Size: {x: 0.254, y: 0.127}
     m_SpecifySize: 1
     m_Name: Golden Trumpet
-    m_Texture: {fileID: 0}
+    m_Texture: {fileID: 2800000, guid: 63f1cae56cf52304dbb8e0b11d46f01c, type: 3}
   - m_SerializedGuid:
       m_GuidLow: 4688767676970561261
       m_GuidHigh: 9713720137873368247
@@ -36,7 +36,7 @@ MonoBehaviour:
     m_Size: {x: 0.1, y: 0.1}
     m_SpecifySize: 1
     m_Name: Logo
-    m_Texture: {fileID: 0}
+    m_Texture: {fileID: 2800000, guid: 5a804a4ff1f7e4038b1f1e6f4ad8a02b, type: 3}
   - m_SerializedGuid:
       m_GuidLow: 5602505921028117032
       m_GuidHigh: 208412801924047543
@@ -46,4 +46,4 @@ MonoBehaviour:
     m_Size: {x: 0.104775, y: 0.104775}
     m_SpecifySize: 1
     m_Name: QRCode
-    m_Texture: {fileID: 0}
+    m_Texture: {fileID: 2800000, guid: a6fd8503774c0402aa403884f5b77f39, type: 3}

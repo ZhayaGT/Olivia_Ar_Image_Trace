@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/ImageTracking/Jonathan/BasicImageTracking 1.unity
+    guid: 9e495cf9c10ffcf44b361cc8405a1a84
+  - enabled: 1
     path: Assets/Scenes/Menu/MenuLoader.unity
     guid: 6688ff74f56714cfeb7c919bcdbfe269
   - enabled: 1
