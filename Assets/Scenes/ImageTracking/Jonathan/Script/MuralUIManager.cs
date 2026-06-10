@@ -16,15 +16,15 @@ public class MuralUIManager : MonoBehaviour
 
     [SerializeField] private Texture2D[] defaultTextures;
     
-    [SerializeField] private RectTransform opacityPanel;
     [SerializeField] private RectTransform scalePanel;
-    [SerializeField] private RectTransform transformPanel;
+    [SerializeField] private RectTransform offsetPanel;
+    [SerializeField] private RectTransform opacityPanel;
+    [SerializeField] private RectTransform rotationPanel;
+    
     [SerializeField] private float animationDuration = 0.3f;
     [SerializeField] private float panelHiddenY = -300f;
     [SerializeField] private float panelVisibleY = 0f;
 
-    [SerializeField] private Toggle flipXToggle;
-    [SerializeField] private Toggle flipYToggle;
     [SerializeField] private Slider xSlider;
     [SerializeField] private Slider ySlider;
     [SerializeField] private Slider rotateSlider;
@@ -118,9 +118,10 @@ public class MuralUIManager : MonoBehaviour
 
     private void InitializePanels()
     {
-        SetPanelY(opacityPanel, panelHiddenY);
         SetPanelY(scalePanel, panelHiddenY);
-        SetPanelY(transformPanel, panelHiddenY);
+        SetPanelY(offsetPanel, panelHiddenY);
+        SetPanelY(opacityPanel, panelHiddenY);
+        SetPanelY(rotationPanel, panelHiddenY);
     }
 
     private void SetPanelY(RectTransform panel, float y)
@@ -145,7 +146,6 @@ public class MuralUIManager : MonoBehaviour
     private IEnumerator AnimatePanels(RectTransform targetPanel)
     {
         float time = 0f;
-        
         Vector2 currentPanelStartPos = Vector2.zero;
         Vector2 targetPanelStartPos = Vector2.zero;
 
@@ -164,7 +164,6 @@ public class MuralUIManager : MonoBehaviour
                 {
                     time += Time.deltaTime;
                     float t = time / animationDuration;
-                    
                     float newY = Mathf.Lerp(targetPanelStartPos.y, panelHiddenY, t);
                     SetPanelY(targetPanel, newY);
                     yield return null;
@@ -200,9 +199,8 @@ public class MuralUIManager : MonoBehaviour
     private void HandleNewMuralSpawned(MuralCanvasController canvasController)
     {
         _activeController = canvasController;
+        _activeController.ResetTransformations();
 
-        if (flipXToggle != null) flipXToggle.SetIsOnWithoutNotify(false);
-        if (flipYToggle != null) flipYToggle.SetIsOnWithoutNotify(false);
         if (xSlider != null) xSlider.SetValueWithoutNotify(0f);
         if (ySlider != null) ySlider.SetValueWithoutNotify(0f);
         if (rotateSlider != null) rotateSlider.SetValueWithoutNotify(0f);
@@ -215,6 +213,7 @@ public class MuralUIManager : MonoBehaviour
     public void OnRotateSliderChanged(float value) { if (_activeController != null) _activeController.SetRotationZ(value); }
     public void OnScaleSliderChanged(float value) { if (_activeController != null) _activeController.SetScaleMultiplier(value); }
     public void OnIntensitySliderChanged(float value) { if (_activeController != null) _activeController.SetIntensity(value); }
-    public void OnFlipXToggleChanged(bool value) { if (_activeController != null) _activeController.ToggleFlipHorizontal(value); }
-    public void OnFlipYToggleChanged(bool value) { if (_activeController != null) _activeController.ToggleFlipVertical(value); }
+    
+    public void OnFlipXButtonClicked() { if (_activeController != null) _activeController.ToggleFlipHorizontal(); }
+    public void OnFlipYButtonClicked() { if (_activeController != null) _activeController.ToggleFlipVertical(); }
 }

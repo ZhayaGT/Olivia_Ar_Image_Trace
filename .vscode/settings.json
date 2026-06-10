@@ -60,13 +60,13 @@
         "*.asset": "yaml",
         "*.meta": "yaml",
         "*.prefab": "yaml",
-        "*.unity": "yaml",
+        "*.unity": "yaml"
     },
     "explorer.fileNesting.enabled": true,
     "explorer.fileNesting.patterns": {
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "arfoundation-samples-6.3.slnx",
+    "dotnet.defaultSolution": "Olivia_Ar_Image_Trace.slnx",
     "dotnet.enableWorkspaceBasedDevelopment": false
 }

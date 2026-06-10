@@ -34,20 +34,30 @@ public class MuralCanvasController : MonoBehaviour
         ApplyTransformations();
     }
 
+    public void ResetTransformations()
+    {
+        _offsetX = 0f;
+        _offsetY = 0f;
+        _rotationZ = 0f;
+        _scaleMultiplier = 1f;
+        _intensity = 1f;
+        _flipX = 1f;
+        _flipY = 1f;
+        ApplyTransformations();
+    }
+
     public void SetTranslationX(float value) { _offsetX = value; ApplyTransformations(); }
     public void SetTranslationY(float value) { _offsetY = value; ApplyTransformations(); }
     public void SetRotationZ(float value) { _rotationZ = value; ApplyTransformations(); }
     public void SetScaleMultiplier(float value) { _scaleMultiplier = value; ApplyTransformations(); }
     public void SetIntensity(float value) { _intensity = value; ApplyTransformations(); }
-    public void ToggleFlipHorizontal(bool flip) { _flipX = flip ? -1f : 1f; ApplyTransformations(); }
-    public void ToggleFlipVertical(bool flip) { _flipY = flip ? -1f : 1f; ApplyTransformations(); }
+    
+    public void ToggleFlipHorizontal() { _flipX *= -1f; ApplyTransformations(); }
+    public void ToggleFlipVertical() { _flipY *= -1f; ApplyTransformations(); }
 
     private void ApplyTransformations()
     {
-        transform.localPosition = new Vector3(_offsetX, _offsetY, 0.005f);
-
-        // Ubah rotasi dasar X menjadi 90f agar Quad berdiri sejajar dengan marker fisik.
-        // Rotasi Z tetap menerima nilai dari slider UI Anda.
+        transform.localPosition = new Vector3(_offsetX, 0.005f, _offsetY);
         transform.localRotation = Quaternion.Euler(90f, 0f, _rotationZ);
 
         float finalScaleX = _runtimeAspectScale.x * _scaleMultiplier * _flipX;

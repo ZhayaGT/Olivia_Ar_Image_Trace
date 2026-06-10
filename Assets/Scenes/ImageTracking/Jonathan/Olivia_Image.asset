@@ -23,7 +23,7 @@ MonoBehaviour:
     m_SerializedTextureGuid:
       m_GuidLow: 16430241910255274575
       m_GuidHigh: 3143750354108030859
-    m_Size: {x: 0.1, y: 0.1}
+    m_Size: {x: 0.5, y: 0.5}
     m_SpecifySize: 1
     m_Name: unitylogowhiteonblack
     m_Texture: {fileID: 2800000, guid: 5a804a4ff1f7e4038b1f1e6f4ad8a02b, type: 3}
