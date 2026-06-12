@@ -4,17 +4,17 @@ TraceAR adalah aplikasi berbasis *Mobile Augmented Reality* (AR) yang dirancang 
 
 ---
 
-## 📌 CATATAN PENTING (PROJECT SCENE LOCATION)
+## CATATAN PENTING (PROJECT SCENE LOCATION)
 
 Repositori ini dikembangkan dengan memodifikasi *sample project* resmi dari **Unity AR Foundation**. Seluruh aset utama, skrip koding spesifik, prefab, dan scene operasional aplikasi TraceAR terletak pada direktori berikut:
 
-📂 **`Assets/Scenes/ImageTracking/Jonathan`**
+**`Assets/Scenes/ImageTracking/Jonathan`**
 
 *Pastikan Anda membuka scene di dalam folder tersebut untuk menjalankan atau memodifikasi fungsionalitas utama aplikasi TraceAR.*
 
 ---
 
-## 🚀 Fitur Utama Aplikasi
+## Fitur Utama Aplikasi
 
 1. **Enhanced Vertical Plane Detection (Metode 4-Stiker Fisik)**
    * Mengatasi keterbatasan sensor kamera HP kelas menengah ke bawah (*low-to-midrange*) pada dinding polos tanpa tekstur (*featureless wall*).
@@ -34,7 +34,7 @@ Repositori ini dikembangkan dengan memodifikasi *sample project* resmi dari **Un
 
 ---
 
-## 🛠️ Spesifikasi Teknologi
+## Spesifikasi Teknologi
 
 * **Game Engine:** Unity LTS 2022.3.x
 * **Graphics Pipeline:** Universal Render Pipeline (URP)
@@ -45,7 +45,7 @@ Repositori ini dikembangkan dengan memodifikasi *sample project* resmi dari **Un
 
 ---
 
-## 📐 Arsitektur Kode Utama
+## Arsitektur Kode Utama
 
 Logika aplikasi dikendalikan secara modular dan *reactive* oleh tiga skrip utama tanpa membebani fungsi `Update()` bawaan Unity:
 
@@ -55,4 +55,4 @@ Logika aplikasi dikendalikan secara modular dan *reactive* oleh tiga skrip utama
 
 ---
 
-## 📋 Alur Operasional Pengguna (App Workflow)
+## Alur Operasional Pengguna (App Workflow)
